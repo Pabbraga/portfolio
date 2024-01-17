@@ -5,13 +5,21 @@ let actualLang = localStorage.getItem("lang")?localStorage.getItem("lang").toLow
 
 function changeText(lang) {
     for(const item in lang) {
-        if(item === "projects") {
-            for(const project in lang.projects) {
-                document.getElementById(project.replace('_', '-')).innerText = lang.projects[project];
+        if(item === "projects_link") {
+            const projectLink = document.querySelectorAll('.projects-link');
+            for(let i = 0; i < projectLink.length; i++) {
+                projectLink[i].innerText = lang["projects_link"];
             }
-            return;
+        } else {
+            if(item === "projects") {
+                for(const project in lang.projects) {
+                    document.getElementById(project.replace('_', '-')).innerText = lang.projects[project];
+                }
+                return;
+            }   else {
+                document.getElementById(item.replace('_', '-')).innerText = lang[item];
+            }
         }
-        document.getElementById(item.replace('_', '-')).innerText = lang[item];
     }
 }
 

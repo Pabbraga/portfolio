@@ -2,6 +2,7 @@
     "about_title": "About me",
     "text_mrkd": "Willing to work on developing solutions through programming.",
     "projects_title": "Projects",
+    "projects_link": "Access",
     "projects": {
         "peritech": "It is a dynamic page, which simulates a e-commerce, built using the React.JS library.",
         "portfolio": "A page dedicated to presenting who I am professionally, built with HTML, CSS and JS tools."

@@ -107,8 +107,7 @@ body {
 }
 .dot-line {
     display: flex;
-    border: 3px dashed #134074;
-    margin-top: 3em;
+    border: 4px dashed #134074;
     padding: 1em;
 }
 .portrait {
