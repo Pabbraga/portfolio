@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/829512fc4b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/script.js"></script>
     <title>Pablo Braga</title>
 </head>
 <body>
@@ -21,18 +20,18 @@
             <p>Pablo Braga</p>
         </a>
         <span class="translate-box">
-            <button onclick="changeLanguage(this)" class="translate-button">
+            <button id="pt" class="translate-button">
                 <p>PT</p>
             </button>
             <p>|</p>
-            <button onclick="changeLanguage(this)" class="translate-button">
+            <button id="en" class="translate-button">
                 <p>EN</p>
             </button>
         </span>
     </header>
     <section id="about-me" class="section-container">
         <span class="title">
-            <p class="about-title"></p>
+            <p id="about-title"></p>
             <hr>
         </span>
         <div class="content-container">
@@ -41,7 +40,7 @@
                     <span class="wrap-mrkd">
                         <p class="subtitle shadow-text">&ltaboutme&gt</p>
                     </span>
-                    <p class="text-mrkd"></p>
+                    <p id="text-mrkd"></p>
                     <span class="wrap-mrkd">
                         <p class="subtitle shadow-text">&ltaboutme/&gt</p>
                     </span>
@@ -54,9 +53,9 @@
             </div>
         </div>
     </section>
-    <section id="projects" class="section-container">
+    <section class="section-container">
         <span class="title">
-            <p class="projects-title right">Projetos</p>
+            <p class="right" id="projects-title">Projetos</p>
             <hr>
         </span>
         <div class="content-container">
@@ -69,7 +68,7 @@
                         <p class="card-title">Peritech</p>
                     </div>
                     <div class="card-body">
-                        <p class="card-text">
+                        <p class="card-text" id="peritech">
                             Trata-se de uma página dinâmica, que simula uma loja virtual,
                             construída a partir da biblioteca React.JS.
                         </p>
@@ -91,7 +90,7 @@
                         <p class="card-title">Portfolio</p>
                     </div>
                     <div class="card-body">
-                        <p class="card-text">
+                        <p class="card-text" id="portfolio">
                             Uma página dedicada a apresentar quem eu sou profissionalmente,
                             construída com as ferramentas HTML, CSS e JS.
                         </p>
@@ -106,5 +105,11 @@
             </div>
         </div>
     </section>
+    <script type="module">
+        import translate from '/js/translate.js';
+
+        document.querySelector('#pt').addEventListener('click', translate);
+        document.querySelector('#en').addEventListener('click', translate);
+    </script>
 </body>
 </html>
