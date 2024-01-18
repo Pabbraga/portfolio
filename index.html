@@ -15,11 +15,11 @@
     <title>Pablo Braga</title>
 </head>
 <body>
-    <header class="header">
-        <a class="logo" href="/">
+    <header id="header">
+        <a id="logo" href="/">
             <p>Pablo Braga</p>
         </a>
-        <span class="translate-box">
+        <span id="translate-box">
             <button id="pt" class="translate-button">
                 <p>PT</p>
             </button>
@@ -35,27 +35,27 @@
             <hr>
         </span>
         <div class="content-container">
-            <div class="mrkd">
+            <div id="mrkd">
                 <div class="wrap-content">
                     <span class="wrap-mrkd">
-                        <p class="subtitle shadow-text">&ltaboutme&gt</p>
+                        <p class="mrkd-code shadow-text">&ltaboutme&gt</p>
                     </span>
                     <p id="text-mrkd"></p>
                     <span class="wrap-mrkd">
-                        <p class="subtitle shadow-text">&ltaboutme/&gt</p>
+                        <p class="mrkd-code shadow-text">&ltaboutme/&gt</p>
                     </span>
                 </div>
             </div>
             <div class="dot-line">
-                <div class="portrait">
-                    <img src="/assets/img/me.png" alt="" class="img">
+                <div id="portrait">
+                    <img src="/assets/img/me.png" alt="" id="img-me">
                 </div>
             </div>
         </div>
     </section>
     <section class="section-container">
         <span class="title">
-            <p class="right" id="projects-title">Projetos</p>
+            <p class="title-to-right" id="projects-title">Projetos</p>
             <hr>
         </span>
         <div class="content-container">
@@ -74,7 +74,7 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <a class="card-link" href="https://peritech.vercel.app/">
+                        <a class="card-link embedded-link" href="https://peritech.vercel.app/">
                             <p class="projects-link">Acessar</p>
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
@@ -96,7 +96,7 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <a class="card-link" href="">
+                        <a class="card-link embedded-link" href="">
                             <p class="projects-link">Acessar</p>
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
@@ -105,6 +105,32 @@
             </div>
         </div>
     </section>
+    <footer id="footer">
+        <div id="social-media">
+            <a target="_self" href="https://github.com/Pabbraga">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a target="_self" href="https://www.linkedin.com/in/pablo-felix-delfante-braga/">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="mailto:pabbragadev@gmail.com">
+                <i class="fa-regular fa-envelope"></i>
+            </a>
+        </div>
+        <div id="copy">
+            <p>
+                <span>Pablo Braga</span> &copy; 2023
+            </p>
+        </div>
+        <div id="credits">
+            <p id="text-credits">
+                Desenvolvido por 
+                <a class="embedded-link" target='_blank' href='https://www.github.com/Pabbraga'>
+                    Pabbraga
+                </a>
+            </p>
+        </div>
+    </footer>
     <script type="module">
         import translate from '/js/translate.js';
 
