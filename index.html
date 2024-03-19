@@ -141,7 +141,7 @@
         </div>
         <div id="copy">
             <p>
-                <span>Pablo Braga</span> &copy; 2023
+                <span>Pablo Braga</span> &copy; <span class="copy-date">2023</span>
             </p>
         </div>
         <div id="credits">
@@ -153,9 +153,11 @@
             </a>
         </div>
     </footer>
+    <script defer>
+        document.querySelector('.copy-date').innerHTML = "2023 - " + new Date().getFullYear();
+    </script>
     <script type="module">
         import translate from './js/translate.js';
-
         document.querySelector('#pt').addEventListener('click', translate);
         document.querySelector('#en').addEventListener('click', translate);
     </script>

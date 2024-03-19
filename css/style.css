@@ -278,6 +278,9 @@ body {
 #copy span {
     font-weight: 500;
 }
+#copy .copy-date {
+    font-weight: normal;
+}
 #credits {
     display: flex;
     flex-direction: row;
