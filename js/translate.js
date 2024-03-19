@@ -15,7 +15,6 @@ function changeText(lang) {
                 for(const project in lang.projects) {
                     document.getElementById(project.replace('_', '-')).innerText = lang.projects[project];
                 }
-                return;
             }   else {
                 document.getElementById(item.replace('_', '-')).innerText = lang[item];
             }
@@ -23,8 +22,24 @@ function changeText(lang) {
     }
 }
 
-function handleText() {
-    switch (actualLang) {
+function changeResume(lang) {
+    const ptButton = document.querySelector("#pt-resume");
+    const enButton = document.querySelector("#en-resume");
+
+    switch (lang) {
+        case 'pt':
+            ptButton.classList.toggle('blank');
+            enButton.classList.toggle('blank');
+            break;
+        case 'en':
+            enButton.classList.toggle('blank');
+            ptButton.classList.toggle('blank');
+            break;
+    }
+}
+
+function handleText(lang) {
+    switch (lang) {
         case 'pt':
             changeText(pt);
             break;
@@ -38,7 +53,8 @@ function translate (e) {
     const inputLang = e.target.innerText;
     localStorage.setItem("lang", inputLang);
     actualLang = localStorage.getItem("lang").toLowerCase();
-    handleText();
+    handleText(actualLang);
+    changeResume(actualLang);
 }
 
 document.addEventListener("DOMContentLoaded", handleText);

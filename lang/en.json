@@ -7,5 +7,7 @@
     "projects": {
         "peritech": "It is a dynamic page, which simulates a e-commerce, built using the React.JS library.",
         "portfolio": "A page dedicated to presenting who I am professionally, built with HTML, CSS and JS tools."
-    }
+    },
+    "resume_title": "Resume",
+    "resume_size": "106 kb"
 }

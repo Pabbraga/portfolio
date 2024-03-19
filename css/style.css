@@ -81,6 +81,9 @@ body {
     padding: 6em 2em;
     gap: 4em;
 }
+.content-to-left {
+    justify-content: left;
+}
 #mrkd {
     max-width: 30em;
     height: fit-content;
@@ -192,6 +195,46 @@ body {
 .embedded-link:focus,
 .embedded-link:active {
     background-size: 100% 0.1em;
+}
+.resume-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 6em;
+}
+.download-resume {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    justify-content: space-between;
+    align-items: center;
+}
+.download-resume p {
+    font-size: .95em;
+}
+.outline-button {
+    padding: .5em;
+    border-radius: 20px;
+    background-color: #cdcdcd;
+}
+.resume-button {
+    display: flex;
+    padding: 1.5em;
+    border-radius: 20px;
+    justify-content: center;
+    text-decoration: none;
+    background-color: #134074;
+}
+.resume-button:hover {
+    transition: .3s;
+    background-color: #174E8C;
+}
+.resume-button p {
+    font-size: 1.4em;
+    font-weight: 500;
+    color: #E7ECEF;
+}
+.blank {
+    display: none;
 }
 #footer {
     display: flex;
