@@ -1,5 +1,5 @@
-import pt from '../lang/pt.json' assert {type:'json'};
-import en from '../lang/en.json' assert {type:'json'};
+import pt from '../lang/pt.json' with {type:'json'};
+import en from '../lang/en.json' with {type:'json'};
 
 let actualLang = localStorage.getItem("lang")?localStorage.getItem("lang").toLowerCase():localStorage.setItem("lang", "PT");
 
