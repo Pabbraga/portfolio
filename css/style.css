@@ -4,14 +4,18 @@
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
 }
+:root {
+    --lightest-color: #EDF2F4;
+    --dark-color: #353A47;
+}
 body {
-    background-color:#EDF2F4;
+    background-color: var(--lightest-color);
 }
 #header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #353A47;
+    background-color: var(--dark-color);
     padding: 2em 4dvw;
 }
 #logo {
@@ -19,8 +23,12 @@ body {
 }
 #logo p {
     font-size: 1.5em;
-    color: #fff;
+    color: #f0edee;
     font-weight: 500;
+}
+#logo p:hover {
+    transition: .3s;
+    color: #717171;
 }
 #translate-box {
     display: flex;
@@ -38,7 +46,7 @@ body {
     padding: .1em;
 }
 .translate-button p {
-    color: #fff;
+    color: #f0edee;
     font-weight: 500;
     font-size: 1.3em;
 }
@@ -58,7 +66,7 @@ body {
 }
 .title p,
 .title hr {
-    color: #353A47;
+    color: var(--dark-color);
 }
 .title p {
     font-size: 8vh;
@@ -119,7 +127,7 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    border: 5px solid #353A47;
+    border: 5px solid var(--dark-color);
     border-radius: 180px;
     background-color: #fff;
 }
@@ -153,7 +161,7 @@ body {
     position: relative;
     bottom: 70px;
     margin-bottom: 10em;
-    background-color: #353A47;
+    background-color: var(--dark-color);
 }
 .card-title {
     font-size: 1.6em;
@@ -183,7 +191,7 @@ body {
 .embedded-link {
     text-decoration: none;
     font-weight: 500;
-    background-image: linear-gradient(#E7ECEF, #E7ECEF);
+    background-image: linear-gradient(#f0edee, var(--lightest-color));
     background-size: 0% 0.1em;
     background-position-y: 100%;
     background-position-x: 0%;
@@ -194,11 +202,6 @@ body {
 .embedded-link:focus,
 .embedded-link:active {
     background-size: 100% 0.1em;
-}
-.resume-container {
-    display: flex;
-    flex-direction: column;
-    padding: 0 6vw;
 }
 .download-resume {
     display: flex;
@@ -231,7 +234,11 @@ body {
 .resume-button p {
     font-size: 1.4em;
     font-weight: 500;
-    color: #E7ECEF;
+    color: var(--lightest-color);
+}
+.resume-button:hover > p {
+    transition: .3s;
+    color: #cdcdcd;
 }
 .blank {
     display: none;
