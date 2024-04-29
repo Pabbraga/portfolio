@@ -158,8 +158,11 @@
     </script>
     <script type="module">
         import translate from './js/translate.js';
-        document.querySelector('#pt').addEventListener('click', translate);
-        document.querySelector('#en').addEventListener('click', translate);
+
+        let actualLang = localStorage.getItem("lang")
+
+        document.querySelector('span#translate-box').addEventListener('click', translate);
+        document.addEventListener("DOMContentLoaded", translate(actualLang));
     </script>
 </body>
 </html>

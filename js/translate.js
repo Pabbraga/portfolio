@@ -1,25 +1,25 @@
 import pt from '../lang/pt.json' with {type:'json'};
 import en from '../lang/en.json' with {type:'json'};
 
-let actualLang = localStorage.getItem("lang")?localStorage.getItem("lang").toLowerCase():localStorage.setItem("lang", "PT");
-
 function changeText(lang) {
-    for(const item in lang) {
-        if(item === "projects_link") {
-            const projectLink = document.querySelectorAll('.projects-link');
-            for(let i = 0; i < projectLink.length; i++) {
-                projectLink[i].innerText = lang["projects_link"];
-            }
-        } else {
-            if(item === "projects") {
-                for(const project in lang.projects) {
-                    document.getElementById(project.replace('_', '-')).innerText = lang.projects[project];
-                }
-            }   else {
-                document.getElementById(item.replace('_', '-')).innerText = lang[item];
-            }
+    const projectLink = document.querySelectorAll('.projects-link');
+    
+    for (let item in lang) {
+        if (document.getElementById(item.replace('_', '-')) != null) {
+            document.getElementById(item.replace('_', '-')).innerText = lang[item];
         }
     }
+    
+    // translating projects links
+    for (let i = 0; i < projectLink.length; i++) {
+        projectLink[i].innerText = lang["projects_link"];
+    }
+    
+    // translating projects about
+    for (const project in lang['projects']) {
+        document.getElementById(project.replace('_', '-')).innerText = lang.projects[project];
+    }
+    
 }
 
 function changeResume(lang) {
@@ -27,36 +27,36 @@ function changeResume(lang) {
     const enButton = document.querySelector("#en-resume");
 
     switch (lang) {
-        case 'pt':
-            ptButton.classList.toggle('blank');
-            enButton.classList.toggle('blank');
+        case 'PT':
+            ptButton.classList.remove('blank');
+            enButton.classList.add('blank');
             break;
-        case 'en':
-            enButton.classList.toggle('blank');
-            ptButton.classList.toggle('blank');
-            break;
-    }
-}
-
-function handleText(lang) {
-    switch (lang) {
-        case 'pt':
-            changeText(pt);
-            break;
-        case 'en':
-            changeText(en);
+        case 'EN':
+            enButton.classList.remove('blank');
+            ptButton.classList.add('blank');
             break;
     }
 }
 
 function translate (e) {
-    const inputLang = e.target.innerText;
-    localStorage.setItem("lang", inputLang);
-    actualLang = localStorage.getItem("lang").toLowerCase();
-    handleText(actualLang);
-    changeResume(actualLang);
-}
+    let inputLang = e;
 
-document.addEventListener("DOMContentLoaded", handleText);
+    if (typeof(e) != "string") {
+        inputLang = e.target.innerText;
+    }
+
+    localStorage.setItem("lang", inputLang);
+
+    switch (inputLang) {
+        case 'PT':
+            changeText(pt);
+            break;
+        case 'EN':
+            changeText(en);
+            break;
+    }
+
+    changeResume(inputLang);
+}
 
 export default translate;
